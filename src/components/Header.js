@@ -3,7 +3,7 @@ import React from 'react';
 const Header = () => {
   return(
     <header>
-      <img src="./assets/IMAGES/MusicPlay_logo.png" />
+      <img className="logo" src="/assets/IMAGES/MusicPlay_logo.png" />
     </header>
   );
 };
