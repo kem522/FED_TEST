@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 import IndexRoute from './components/IndexRoute';
+import ShowRoute from './components/ShowRoute';
 
 class App extends React.Component {
 
@@ -11,6 +12,7 @@ class App extends React.Component {
       <BrowserRouter>
         <main className="container">
           <Switch>
+            <Route path="/:id" component={ShowRoute}/>
             <Route path="/" component={IndexRoute}/>
           </Switch>
         </main>
