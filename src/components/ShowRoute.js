@@ -1,9 +1,13 @@
 import React from 'react';
 import axios from 'axios';
 
+import { Link } from 'react-router-dom';
+
 class ShowRoute extends React.Component {
   state = {
-    video: {}
+    video: {
+      snippet: {}
+    }
   }
 
   componentDidMount(){
@@ -14,15 +18,23 @@ class ShowRoute extends React.Component {
         'key': 'AIzaSyCuv_16onZRx3qHDStC-FUp__A6si-fStw'
       }
     })
-      .then(res => this.setState({ video: res }));
+      .then(res => this.setState({ video: res.data.items[0] }));
   }
 
   render(){
     return (
-      <section>
-        <iframe id="ytplayer" type="text/html" width="640" height="360"
-          src={`https://www.youtube.com/embed/${this.props.match.params.id}`}
-          frameBorder="0"></iframe>
+      <section className="columns">
+        <div className="column is-two-thirds-desktop">
+          <iframe id="ytplayer" type="text/html" width="640" height="360"
+            src={`https://www.youtube.com/embed/${this.state.video.id}`}
+            frameBorder="0"></iframe>
+        </div>
+        <div className="column">
+          <h2>{this.state.video.snippet.title}</h2>
+          <h3>Published on {this.state.video.snippet.publishedAt}</h3>
+          <p>{this.state.video.snippet.description}</p>
+          <Link to="/"><img src="/assets/IMAGES/back_arrow.svg" />Back to list</Link>
+        </div>
       </section>
     );
   }

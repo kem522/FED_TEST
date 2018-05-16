@@ -5,6 +5,9 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import IndexRoute from './components/IndexRoute';
 import ShowRoute from './components/ShowRoute';
 
+import 'bulma/css/bulma.min.css';
+import './assets/style.css';
+
 class App extends React.Component {
 
   render(){

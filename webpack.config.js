@@ -1,6 +1,9 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin'); // Require  html-webpack-plugin plugin
 const path = require('path');
 
+
+const CopyWebpackPlugin = require('copy-webpack-plugin');
+
 module.exports = {
   mode: 'development',
   entry: './src/app.js', // webpack entry point. Module to start building dependency graph
@@ -20,7 +23,10 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: 'src/index.html',
       inject: 'body'
-    })
+    }),
+    new CopyWebpackPlugin([
+      { from: './src/assets', to: 'assets' }
+    ])
   ],
   devServer: {  // configuration for webpack-dev-server
     contentBase: './src',  //source of static assets
