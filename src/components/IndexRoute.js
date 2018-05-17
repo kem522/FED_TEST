@@ -14,7 +14,7 @@ class IndexRoute extends React.Component {
       params: {
         part: 'snippet,contentDetails,status',
         maxResults: 10,
-        playlistId: 'LSi28iDfECJPJYFA4wjlF5KUucFvc0qbQ',
+        playlistId: 'PLSi28iDfECJPJYFA4wjlF5KUucFvc0qbQ',
         key: 'AIzaSyCuv_16onZRx3qHDStC-FUp__A6si-fStw'
       }
     })
